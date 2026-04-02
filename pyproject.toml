@@ -9,5 +9,6 @@ dependencies = [
     "azure-core",
     "ipykernel",
     "jupyter",
+    "streamlit>=1.56.0",
 ]
 
