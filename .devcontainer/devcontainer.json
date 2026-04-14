@@ -1,8 +1,9 @@
 {
   "name": "AI Academy (python image based)",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
+      "version": "os-provided",
       "installJupyterlab": true
     },
     "ghcr.io/devcontainers/features/node:1": {
