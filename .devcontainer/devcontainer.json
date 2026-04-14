@@ -8,14 +8,13 @@
     },
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/git:1": {
-            "version": "latest",
-            "ppa": "false"
-        }
-
+      "version": "latest",
+      "ppa": "false"
+    },
+    "ghcr.io/astral-sh/setup-uv:1": {}
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
+  "updateContentCommand": "bash .devcontainer/setup-kernel.sh",
   "customizations": {
     "codespaces": {
       "openFiles": [
