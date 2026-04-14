@@ -2,9 +2,12 @@
   "name": "AI Academy",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "installJupyterlab": true
+    },
     "ghcr.io/devcontainers-contrib/features/uv:1": {}
   },
-  "postCreateCommand": "uv sync",
+  "postCreateCommand": "uv sync && uv run python -m pip install --upgrade jupyterlab",
   "forwardPorts": [
     8501,
     8888,
@@ -23,9 +26,12 @@
     },
     "5000": {
       "label": "MLflow Dashboard",
-      "onAutoForward": "notify", // Changed to 'notify' so students see the popup
+      "onAutoForward": "notify",
       "visibility": "private"
     }
+  },
+  "containerEnv": {
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
   },
   "customizations": {
     "codespaces": {
