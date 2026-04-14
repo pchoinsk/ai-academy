@@ -11,7 +11,7 @@
       "version": "latest",
       "ppa": "false"
     },
-    "ghcr.io/astral-sh/setup-uv:1": {}
+    "ghcr.io/devcontainers-contrib/features/uv:1": {}
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "bash .devcontainer/setup.sh",
