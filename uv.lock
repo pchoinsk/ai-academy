@@ -587,7 +587,6 @@ dependencies = [
     { name = "azure-core" },
     { name = "ipykernel" },
     { name = "jupyter" },
-    { name = "jupyterlab" },
     { name = "matplotlib" },
     { name = "streamlit" },
 ]
@@ -598,7 +597,6 @@ requires-dist = [
     { name = "azure-core" },
     { name = "ipykernel" },
     { name = "jupyter" },
-    { name = "jupyterlab", specifier = ">=4.5.6" },
     { name = "matplotlib", specifier = ">=3.8.0" },
     { name = "streamlit", specifier = ">=1.56.0" },
 ]
