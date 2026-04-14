@@ -1,5 +1,5 @@
 {
-  "name": "AI Academy (debian based)",
+  "name": "AI Academy (Debian image based)",
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
     "ghcr.io/devcontainers/features/python:1": {

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# .devcontainer/setup-kernel.sh
+# .devcontainer/setup.sh
 set -e
 
 KERNEL_NAME="ai-academy"
