@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers-contrib/features/uv:1": {}
   },
-  "postCreateCommand": "uv sync && echo \"alias jlab='uv run jupyter lab --ip=0.0.0.0 --ServerApp.token=\\'\\' --allow-root'\" >> ~/.bashrc",
+  "postCreateCommand": "uv sync && bash .devcontainer/setup.sh",
   "forwardPorts": [
     8501,
     8888,
