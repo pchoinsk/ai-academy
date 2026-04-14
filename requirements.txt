@@ -1,0 +1,6 @@
+azure-ai-inference>=1.0.0b1
+azure-core
+ipykernel
+jupyter
+matplotlib>=3.8.0
+streamlit>=1.56.0

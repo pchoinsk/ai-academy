@@ -1,41 +1,15 @@
 {
-  "name": "AI Academy (universal image)",
+  "name": "AI Academy (universal image based)",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers-contrib/features/uv:1": {}
+  "hostRequirements": {
+    "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "postCreateCommand": "uv sync",
-  "forwardPorts": [
-    8501,
-    8888,
-    5000
-  ],
-  "portsAttributes": {
-    "8501": {
-      "label": "Streamlit App",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    },
-    "8888": {
-      "label": "JupyterLab Server",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    },
-    "5000": {
-      "label": "MLflow Dashboard",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    }
-  },
-  "containerEnv": {
-    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
-  },
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "postCreateCommand": "",
   "customizations": {
     "codespaces": {
-      "openFiles": [
-        "README.md"
-      ]
+      "openFiles": []
     },
     "vscode": {
       "extensions": [
@@ -44,11 +18,7 @@
         "ms-toolsai.jupyter",
         "github.copilot",
         "github.copilot-chat"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
-        "jupyter.kernels.default": "python3"
-      }
+      ]
     },
     "repositories": {
       "pchoinsk/ai-academy": {
