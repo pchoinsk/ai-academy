@@ -2,9 +2,12 @@
   "name": "AI Academy",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
+    "ghcr.io/devcontainers/features/jupyterlab:1": {
+      "version": "latest"
+    },
     "ghcr.io/devcontainers-contrib/features/uv:1": {}
   },
-  "postCreateCommand": "pipx install jupyterlab && uv sync",
+  "postCreateCommand": "uv sync",
   "forwardPorts": [
     8501,
     8888,
