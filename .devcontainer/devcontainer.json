@@ -1,52 +1,21 @@
 {
-  "name": "AI Academy (slim image)",
+  "name": "AI Academy (debian based)",
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2":{
-            "installZsh": "true",
-            "username": "vscode",
-            "userUid": "1000",
-            "userGid": "1000",
-            "upgradePackages": "true"
-        },
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.12",
       "installJupyterlab": true
     },
-    "ghcr.io/devcontainers-contrib/features/uv:1": {},
-        "ghcr.io/devcontainers/features/node:1": "none",
-        "ghcr.io/devcontainers/features/git:1": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
             "ppa": "false"
         }
 
   },
-  "postCreateCommand": "uv sync",
-  "forwardPorts": [
-    8501,
-    8888,
-    5000
-  ],
-  "portsAttributes": {
-    "8501": {
-      "label": "Streamlit App",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    },
-    "8888": {
-      "label": "JupyterLab Server",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    },
-    "5000": {
-      "label": "MLflow Dashboard",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    }
-  },
-  "containerEnv": {
-    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
-  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "postCreateCommand": "",
   "customizations": {
     "codespaces": {
       "openFiles": [
@@ -60,11 +29,7 @@
         "ms-toolsai.jupyter",
         "github.copilot",
         "github.copilot-chat"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
-        "jupyter.kernels.default": "python3"
-      }
+      ]
     },
     "repositories": {
       "pchoinsk/ai-academy": {
