@@ -587,8 +587,6 @@ dependencies = [
     { name = "azure-core" },
     { name = "ipykernel" },
     { name = "jupyter" },
-    { name = "jupyterlab" },
-    { name = "jupyterlab-git" },
     { name = "matplotlib" },
     { name = "streamlit" },
 ]
@@ -599,8 +597,6 @@ requires-dist = [
     { name = "azure-core" },
     { name = "ipykernel" },
     { name = "jupyter" },
-    { name = "jupyterlab", specifier = ">=4.5.6" },
-    { name = "jupyterlab-git", specifier = ">=0.52.0" },
     { name = "matplotlib", specifier = ">=3.8.0" },
     { name = "streamlit", specifier = ">=1.56.0" },
 ]
@@ -1002,23 +998,6 @@ wheels = [
 ]
 
 [[package]]
-name = "jupyterlab-git"
-version = "0.52.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "jupyter-server" },
-    { name = "nbdime" },
-    { name = "nbformat" },
-    { name = "packaging" },
-    { name = "pexpect" },
-    { name = "traitlets" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/b5/9e/46de433b6d5a04451f15972e695f71e126a3f98b0102b4f8c77928b4bc0a/jupyterlab_git-0.52.0.tar.gz", hash = "sha256:0a21b78b1b0c5d57d69fd66ce7027360f16781a19d933b9788544b384e1d9583", size = 14477347, upload-time = "2026-03-02T13:27:14.604Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/fe/1f/d9928d5137e5ef6b099592b402457fbb77f4e17721465d6258fdb8b06ec3/jupyterlab_git-0.52.0-py3-none-any.whl", hash = "sha256:bb3f516b1ebce2fd0726f93c52567e2d8d462e49263c59009f1b7bb41232a9a1", size = 370350, upload-time = "2026-03-02T13:27:12.205Z" },
-]
-
-[[package]]
 name = "jupyterlab-pygments"
 version = "0.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1337,25 +1316,6 @@ wheels = [
 ]
 
 [[package]]
-name = "nbdime"
-version = "4.0.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "colorama" },
-    { name = "gitpython" },
-    { name = "jinja2" },
-    { name = "jupyter-server" },
-    { name = "nbformat" },
-    { name = "pygments" },
-    { name = "requests" },
-    { name = "tornado" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/0c/22/d1ae77115b96b2ff8df6bbc54f8651eeb02d5716cea9079cdf94eaf6bb8b/nbdime-4.0.4.tar.gz", hash = "sha256:8cd25ecfeeb5105d563237d7f64eb4748058fba9bba9ab3892a1ff61e177ce16", size = 9454602, upload-time = "2026-02-10T15:02:02.995Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/60/dd/75a852b276f29e131c33083cb57dfaf3996c94ac2e07b1c90cf5950b7505/nbdime-4.0.4-py3-none-any.whl", hash = "sha256:4cdfb628c6625fe2c6cada2fe24917fa461e542cfe66a54096081af3fb1eeec4", size = 5917507, upload-time = "2026-02-10T15:02:00.216Z" },
-]
-
-[[package]]
 name = "nbformat"
 version = "5.10.4"
 source = { registry = "https://pypi.org/simple" }
@@ -1552,7 +1512,7 @@ name = "pexpect"
 version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "ptyprocess" },
+    { name = "ptyprocess", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz", hash = "sha256:ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f", size = 166450, upload-time = "2023-11-25T09:07:26.339Z" }
 wheels = [
