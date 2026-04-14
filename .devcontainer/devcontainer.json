@@ -14,7 +14,7 @@
     "ghcr.io/astral-sh/setup-uv:1": {}
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "bash .devcontainer/setup-kernel.sh",
+  "updateContentCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "codespaces": {
       "openFiles": [
