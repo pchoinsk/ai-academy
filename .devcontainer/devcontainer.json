@@ -1,10 +1,27 @@
 {
-  "name": "AI Academy",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "name": "AI Academy (slim image)",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/uv:1": {}
+    "ghcr.io/devcontainers/features/common-utils:2":{
+            "installZsh": "true",
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "true"
+        },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12",
+      "installJupyterlab": true
+    },
+    "ghcr.io/devcontainers-contrib/features/uv:1": {},
+        "ghcr.io/devcontainers/features/node:1": "none",
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        }
+
   },
-  "postCreateCommand": "uv sync && bash .devcontainer/setup.sh",
+  "postCreateCommand": "uv sync",
   "forwardPorts": [
     8501,
     8888,
