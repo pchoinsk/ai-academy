@@ -1,37 +1,20 @@
 {
-  "name": "AI Academy (Python image based + JupyterLab)",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "name": "AI Academy (Debian image based)",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12",
+      "installJupyterlab": true
+    },
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": "false"
+    },
     "ghcr.io/devcontainers-contrib/features/uv:1": {}
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "bash ${containerWorkspaceFolder}/.devcontainer/setup.sh",
-  "postStartCommand": "PYTHONUNBUFFERED=1 nohup uv run jupyter lab --ip=0.0.0.0 --port=8888 --ServerApp.token='' --ServerApp.password='' --no-browser >> jupyter.log 2>&1 & wait",
-  "forwardPorts": [
-    8501,
-    8888,
-    5000
-  ],
-  "portsAttributes": {
-    "8501": {
-      "label": "Streamlit App",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    },
-    "8888": {
-      "label": "JupyterLab Server",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    },
-    "5000": {
-      "label": "MLflow Dashboard",
-      "onAutoForward": "notify",
-      "visibility": "private"
-    }
-  },
-  "containerEnv": {
-    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
-  },
   "customizations": {
     "codespaces": {
       "openFiles": [
